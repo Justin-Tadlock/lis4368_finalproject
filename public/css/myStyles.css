@@ -1,0 +1,21 @@
+/* 
+    Created on : Mar 31, 2015, 12:25:16 AM
+    Author     : Justin Tadlock
+*/
+
+.wrapper {
+    padding-bottom: 5em;
+}
+.wrapper h4 {
+    text-align: center;
+}
+
+#productTable {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#homePage > div > p {
+    max-width: 50%;
+    margin: 0 auto;
+}
