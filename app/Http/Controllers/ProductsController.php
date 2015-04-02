@@ -4,6 +4,14 @@
     use App\Model\Game;
 
     class ProductsController extends Controller {
+        
+        /**
+         * Constructor
+         */
+        public function __construct() {
+            $this->middleware('guest');
+        }
+        
         /**
         * Grab the list of games from the db and load the products view content.
         *
