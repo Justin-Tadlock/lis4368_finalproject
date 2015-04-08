@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8fa0c788bee9d98f331dc3bb5b35f6cc",
+    "hash": "2aed9ced95431c228cc51684747e9e4c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -223,6 +223,52 @@
             "time": "2014-12-20 21:24:13"
         },
         {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
+        },
+        {
             "name": "ircmaxell/password-compat",
             "version": "v1.0.4",
             "source": {
@@ -410,16 +456,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.0.23",
+            "version": "v5.0.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "59219f7afb60be05d74ce01fcb5d2440f7a1b13d"
+                "reference": "4d6330118a295086ce9ff8eed2200d5b67f17688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/59219f7afb60be05d74ce01fcb5d2440f7a1b13d",
-                "reference": "59219f7afb60be05d74ce01fcb5d2440f7a1b13d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4d6330118a295086ce9ff8eed2200d5b67f17688",
+                "reference": "4d6330118a295086ce9ff8eed2200d5b67f17688",
                 "shasum": ""
             },
             "require": {
@@ -532,7 +578,48 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-03-28 16:56:59"
+            "time": "2015-04-04 01:34:57"
+        },
+        {
+            "name": "laravel/laravel",
+            "version": "v5.0.22",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/laravel.git",
+                "reference": "7bddbdc2a1f8d9c23205707e74455d74684e3031"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/laravel/zipball/7bddbdc2a1f8d9c23205707e74455d74684e3031",
+                "reference": "7bddbdc2a1f8d9c23205707e74455d74684e3031",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.0.*"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.1",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "classmap": [
+                    "database"
+                ],
+                "psr-4": {
+                    "App\\": "app/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The Laravel Framework.",
+            "keywords": [
+                "framework",
+                "laravel"
+            ],
+            "time": "2015-03-24 21:06:56"
         },
         {
             "name": "league/flysystem",
