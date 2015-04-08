@@ -12,7 +12,7 @@
 */
 
 //Home page
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'AboutController@index');
 
 //Products page
 Route::get('products', 'ProductsController@index');
