@@ -34,29 +34,38 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * @var int Primary Key within the user table.
      */
-    protected $primaryKey = 'usr_username';
+    protected $primaryKey = 'username';
     
     /**
      * @var string Database connection name.
      */
     protected $connection = 'myDB';
-
     
     /**
-     * Returns the user's username.
+     * Set the user's username.
      * 
-     * @return string
+     * @param string $username
      */
-    public function getUsernameAttribute() {
-        return $this->usr_username;
+    public function setUsername($username) {
+        $this->username = $username;
     }
     
     /**
-     * Returns the user's encrypted password.
+     * Set the user's email address
      * 
-     * @return string
+     * @param string $email
      */
-    public function getPasswordAttribute() {
-        return $this->usr_password;
+    public function setEmail($email) {
+        $this->email = $email;
     }
+    
+    /**
+     * Set the user's password
+     * 
+     * @param string $password
+     */
+    public function setPassword($password) {
+        $this->password = $password;
+    }
+    
 }
