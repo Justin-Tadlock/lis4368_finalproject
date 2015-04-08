@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response;
 //use Symfony\Component\Security\Core\User\User;
 
@@ -67,11 +68,9 @@ class AuthController extends Controller {
         //Registering the user
         $this->user->setUsername($request->username);
         $this->user->setEmail($request->email);
-        $this->user->setPassword($request->password);
+        $this->user->setPassword(Hash::make($request->password));
         $this->user->save(); //Insert into the database
         
-        //Logging the user in and redirecting to the home page.
-        $this->auth->login($this->user);
         return redirect('/');
     }
     
@@ -86,7 +85,7 @@ class AuthController extends Controller {
                 'username' => $request->input('username'), 
                 'password' => $request->input('password')
         ))) {
-            return redirect('/');
+            return redirect('/'); //If successful, redirect to home page
         }
         
         //Redirect to login screen if the attempt fails.
