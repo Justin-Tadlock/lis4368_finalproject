@@ -6,20 +6,20 @@ use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
 class Registrar implements RegistrarContract {
 
-	/**
+    /**
 	 * Get a validator for an incoming registration request.
 	 *
 	 * @param  array  $data
 	 * @return \Illuminate\Contracts\Validation\Validator
 	 */
 	public function validator(array $data)
-	{
-		return Validator::make($data, [
-			'username' => 'required|max:255',
-			'email' => 'required|email|max:255|unique:user',
-			'password' => 'required|confirmed|min:6',
-		]);
-	}
+	{   
+        return Validator::make($data, [
+            'username' => 'required|max:255|unique:UserLaravel',
+            'email' => 'required|email|max:255|unique:UserLaravel',
+            'password' => 'required|confirmed|min:4',
+        ]);
+    }
 
 	/**
 	 * Create a new user instance after a valid registration.
