@@ -20,6 +20,12 @@ use App\Model\Game;
        public function index()
        {
            //Submit the array of Game objects to the view as $gameList variable.
-           return view('products', ['gameList' => Game::all()]);
+           return view('products')->with(array('gameList' => Game::all()));
+       }
+       
+       public function single($gameTitle) {
+           $game = Game::find($gameTitle);
+           
+           return view('SingleProduct')->with(array('game' => $game));
        }
     }
