@@ -21,7 +21,16 @@
         /**
          * @var string Primary key of the table.
          */
-        protected $primaryKey = 'gme_id';
+        protected $primaryKey = 'gme_title';
+        
+        /**
+         * Returns the location of the image for the Game object.
+         * 
+         * @return string
+         */
+        public function getImageAttribute() {
+            return $this->gme_image;
+        }
         
         /**
          * Returns the Title of the Game object.
