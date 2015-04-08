@@ -19,3 +19,37 @@
     max-width: 50%;
     margin: 0 auto;
 }
+
+#allProducts table {
+    max-width: 50%;
+}
+#allProducts table td {
+    min-width: 6em;
+}
+#allProducts table td:first-child, #allProducts table td:nth-child(2) {
+    max-width: 12em;
+}
+
+#singleProduct header {
+    text-align: center;
+}
+#singleProduct header > strong, #singleProduct header > span {
+    font-size: 1.3em;
+}
+#singleProduct header > span {
+    font-style: italic;
+    font-weight: bold;
+}
+#singleProduct article {
+    width:400px;
+    margin: 0 auto;
+}
+#singleProduct img {
+    max-width: 400px;
+}
+#singleProduct table {
+    width: 400px;
+}
+#singleProduct table td {
+    width: 50%;
+}
