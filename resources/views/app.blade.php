@@ -41,7 +41,7 @@
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('products') }}">Products</a></li>
                     @if(!Auth::guest())
-                        <li><a href="{{ url('/products/add') }}">Add Product</a></li>
+                        <li><a href="{{ url('AddProduct') }}">Add Product</a></li>
                     @endif
                 </ul>
 
