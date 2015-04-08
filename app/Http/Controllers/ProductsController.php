@@ -1,7 +1,7 @@
 <?php
     namespace App\Http\Controllers;
-    
-    use App\Model\Game;
+
+use App\Model\Game;
 
     class ProductsController extends Controller {
         
@@ -9,7 +9,7 @@
          * Constructor
          */
         public function __construct() {
-            $this->middleware('guest');
+            //$this->middleware('guest');
         }
         
         /**
