@@ -2,8 +2,6 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
-use Illuminate\Support\Facades\Auth;
-use Symfony\Component\HttpFoundation\Response;
 use App\Model\Game;
 
 
