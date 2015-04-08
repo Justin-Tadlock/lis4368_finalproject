@@ -87,6 +87,15 @@
         }
         
         /**
+         * Set the game's image name.
+         * 
+         * @param string $imageName
+         */
+        public function setImage($imageName) {
+            $this->gme_image = $imageName;
+        }
+        
+        /**
          * Set game title.
          * 
          * @param string $title
