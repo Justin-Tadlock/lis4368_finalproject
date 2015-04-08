@@ -17,6 +17,9 @@ Route::get('/', 'AboutController@index');
 //Products page
 Route::get('products', 'ProductsController@index');
 
+//Single Product Page
+Route::get('products/{title}', 'ProductsController@single');
+
 //Add Product Page
 Route::get('AddProduct', array('uses' => 'AddProductController@getAddProduct'));
 Route::post('AddProduct', array('uses' => 'AddProductController@postAddProduct'));
