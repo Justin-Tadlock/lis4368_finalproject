@@ -1,9 +1,14 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\User;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+//use Symfony\Component\Security\Core\User\User;
 
 class AuthController extends Controller {
 
@@ -23,16 +28,81 @@ class AuthController extends Controller {
 	/**
 	 * Create a new authentication controller instance.
 	 *
-	 * @param  \Illuminate\Contracts\Auth\Guard  $auth
-	 * @param  \Illuminate\Contracts\Auth\Registrar  $registrar
+	 * @param  Guard  $auth
+	 * @param  User   $user
 	 * @return void
 	 */
-	public function __construct(Guard $auth, Registrar $registrar)
+	public function __construct(Guard $auth, User $user)
 	{
 		$this->auth = $auth;
-		$this->registrar = $registrar;
+		$this->user = $user;
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
     
+    /**
+     * Handle for printing the registration form.
+     * 
+     * @return Response
+     */
+    public function getRegister() {
+        return view('auth/register');
+    }
+    
+    /**
+     * Handle for printing the login form
+     * 
+     * @return Response
+     */
+    public function getLogin() {
+        return view('auth/login');
+    }
+    
+    /**
+     * Handle for processing a submitted registration form
+     * 
+     * @param Request $request
+     */
+    public function postRegister(RegisterRequest $request) {
+        //Registering the user
+        $this->user->setUsername($request->username);
+        $this->user->setEmail($request->email);
+        $this->user->setPassword($request->password);
+        $this->user->save(); //Insert into the database
+        
+        //Logging the user in and redirecting to the home page.
+        $this->auth->login($this->user);
+        return redirect('/');
+    }
+    
+    /**
+     * Handle for processing a submitted login form
+     * 
+     * @param Request $request
+     */
+    public function postLogin(LoginRequest $request) {
+        //Attempt to log the user in
+        if($this->auth->attempt(array(
+                'username' => $request->input('username'), 
+                'password' => $request->input('password')
+        ))) {
+            return redirect('/');
+        }
+        
+        //Redirect to login screen if the attempt fails.
+        return redirect('auth/login')->withErrors(array(
+           'username' => 'There was an error. Please check your username or password and try again.' 
+        ));
+    }
+    
+    /**
+     * Log the user out.
+     * 
+     * @return Response
+     */
+    public function getLogout() {
+        $this->auth->logout();
+        
+        return redirect('/');
+    }
 }
