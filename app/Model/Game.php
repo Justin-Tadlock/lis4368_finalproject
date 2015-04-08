@@ -76,4 +76,58 @@
         public function getCommentsAttribute() {
             return $this->gme_comments;
         }
+        
+        /**
+         * Set game title.
+         * 
+         * @param string $title
+         */
+        public function setTitle($title) {
+            $this->gme_title = $title;
+        }
+        
+        /**
+         * Set game developer
+         * 
+         * @param string $developer
+         */
+        public function setDeveloper($developer) {
+            $this->gme_developer = $developer;
+        }
+        
+        /**
+         * Set game console
+         * 
+         * @param string $console
+         */
+        public function setConsole($console) {
+            $this->gme_console = $console;
+        }
+        
+        /**
+         * Set the game price
+         * 
+         * @param float $price
+         */
+        public function setPrice($price) {
+            $this->gme_price = (float)$price;
+        }
+        
+        /**
+         * Set game rating
+         * 
+         * @param string $rating
+         */
+        public function setRating($rating) {
+            $this->gme_rating = $rating;
+        }
+        
+        /**
+         * Set game comments
+         * 
+         * @param string $comments
+         */
+        public function setComments($comments) {
+            $this->gme_comments = $comments;
+        }
     }
