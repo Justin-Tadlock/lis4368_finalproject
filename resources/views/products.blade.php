@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<section class="wrapper">
+<section class="wrapper" id='allProducts'>
     <header>
         <h4>Products</h4>
         <hr />
@@ -14,7 +14,7 @@
                 <th>Studio</th>
                 <th>Game Console</th>
                 <th>Price</th>
-                <th>Rating</th>
+                <th>Details</th>
             </tr>
         </thead>
         <tbody>
@@ -24,8 +24,12 @@
                     <td>  {{ $game->getDeveloperAttribute() }} </td>
                     <td>  {{ $game->getConsoleAttribute()   }} </td>
                     <td>$ {{ $game->getPriceAttribute()     }} </td>
-                    <td>  {{ $game->getRatingAttribute()    }} </td>
-                    <td>  {{ $game->getCommentsAttribute()  }} </td>
+                    <td>  
+                        <a href="{{ url('products/' . $game->getTitleAttribute()) }}" 
+                           class="btn btn-primary">
+                            Details
+                        </a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
