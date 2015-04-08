@@ -17,6 +17,10 @@ Route::get('/', 'WelcomeController@index');
 //Products page
 Route::get('products', 'ProductsController@index');
 
+//Add Product Page
+Route::get('AddProduct', array('uses' => 'AddProductController@getAddProduct'));
+Route::post('AddProduct', array('uses' => 'AddProductController@postAddProduct'));
+
 //Other Controllers.
 Route::controllers([
 	'auth' => 'Auth\AuthController',
