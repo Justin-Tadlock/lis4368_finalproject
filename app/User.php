@@ -42,6 +42,24 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     protected $connection = 'myDB';
     
     /**
+     * Returns the user's username
+     * 
+     * @return string
+     */
+    public function getUsername() {
+        return $this->username;
+    }
+    
+    /**
+     * Returns the user's email address.
+     * 
+     * @return string
+     */
+    public function getEmail() {
+        return $this->email;
+    }
+    
+    /**
      * Set the user's username.
      * 
      * @param string $username
