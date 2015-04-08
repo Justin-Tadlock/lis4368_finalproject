@@ -22,6 +22,7 @@ class ProductRequest extends Request {
 	public function rules()
 	{
 		return [
+            'image'     => 'max:255',
 			'title'     => 'required|min:2|max:60|unique:Game,gme_title',
             'developer' => 'required|min:1|max:15',
             'console'   => 'required|min:1|max:15',
