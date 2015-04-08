@@ -68,7 +68,15 @@
             </div>
         </div>
     </nav>
-
+    
+    <header>
+        <h4 class="panel-heading text-center">
+            @if(session()->has('data'))
+                {{ session('data') }}
+            @endif
+        </h4>
+    </header>
+    
 	@yield('content')
 
 	<!-- Scripts -->
