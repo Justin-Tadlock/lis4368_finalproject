@@ -24,6 +24,19 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Game Image Name</label>
+                            <div class="col-md-6">
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="image" 
+                                       name="image" 
+                                       placeholder="Game Image Name"
+                                       value="{{ old('image') }}"
+                                >
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
                             <label class="col-md-4 control-label">Title</label>
                             <div class="col-md-6">
                                 <input type="text" 
